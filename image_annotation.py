@@ -66,7 +66,7 @@ def polygon_select(event, x, y, flags, param):
 cv2.namedWindow("image")
 cv2.setMouseCallback("image", polygon_select)
 
-for frame in glob.iglob(path+"/*.jpg"):
+for frame in sorted(glob.iglob(path+"/*.jpg")):
     frameid = int(re.findall(r'\d+',frame[-10:])[0])
     if (frameid <= frame_resume):
         print("Frame ", frameid, " already annotated.")
